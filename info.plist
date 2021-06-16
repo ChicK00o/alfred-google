@@ -125,19 +125,6 @@ open "/Applications/Alfred 4.app"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>showWebView</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>AD5AD3EA-8CF0-40F6-B7BE-949819934252</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>{var:id}</string>
 				<key>passinputasargument</key>
@@ -151,6 +138,19 @@ open "/Applications/Alfred 4.app"</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>D1201A73-CA4C-4564-910A-7FC65F9E1989</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>showWebView</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>AD5AD3EA-8CF0-40F6-B7BE-949819934252</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -180,17 +180,13 @@ open "/Applications/Alfred 4.app"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>function urlquote() {
-  python2 -c "import urllib; import sys; sys.stdout.write(urllib.quote(sys.argv[-1]))" "$1"
-}
-
-url=$1
+				<string>url=$1
 
 cat &lt;&lt; EOF | 'AlfredWebView.app/Contents/Resources/scripts/alfred-web-view'
 {"items" : [
-  {"title": "Go Back To Original Trigger",
+  {"title": "Go Back",
    "rawQuery": "$url",
-   "arg": "",
+   "arg": "$url",
    "subtitle": ""}
 ]}
 EOF</string>
