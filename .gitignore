@@ -6,6 +6,7 @@
 .idea
 __pycache__
 AlfredGoogleViewer.app
+AlfredWebView.app
 DerivedData
 wfbuild
 xcuserdata

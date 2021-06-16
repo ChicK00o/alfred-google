@@ -39,10 +39,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>mr.pennyworth.AlfredGoogleViewer</string>
+			<string>mr.pennyworth.AlfredWebView</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>alfred-google-viewer</string>
+				<string>alfred-web-view</string>
 			</array>
 		</dict>
 	</array>

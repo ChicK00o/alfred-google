@@ -8,10 +8,10 @@ import subprocess
 from contextlib import contextmanager
 
 
-XCPROJ = 'google-viewer/AlfredGoogleViewer.xcodeproj/project.pbxproj'
+XCPROJ = 'google-viewer/AlfredWebView.xcodeproj/project.pbxproj'
 BUILD_DIR = 'wfbuild'
 WF_FILES = [
-  'AlfredGoogleViewer.app',
+  'AlfredWebView.app',
   'icon.png',
   'info.plist',
   'README.md',

@@ -33,7 +33,7 @@ if __name__ == '__main__':
   urllib.quote_plus = urllib.quote
   subprocess.call([
     'open', '-g',
-    'alfred-google-viewer://update?%s' % urllib.urlencode({
+    'alfred-web-view://update?%s' % urllib.urlencode({
       'rawQuery': rawQuery,
       'cssFile': cssfilepath,
       'bkgColor': bkgColorWithoutAlpha

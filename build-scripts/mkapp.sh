@@ -6,10 +6,10 @@ if [ -e "/Applications/Xcode_11.7.app" ]; then
 fi
 
 xcodebuild \
-  -project './google-viewer/AlfredGoogleViewer.xcodeproj' \
+  -project './google-viewer/AlfredWebView.xcodeproj' \
   -configuration Release \
   -scheme 'AlfredGoogleViewer' \
   -derivedDataPath DerivedData \
   build
 
-cp -r 'DerivedData/Build/Products/Release/AlfredGoogleViewer.app' ./
+cp -r 'DerivedData/Build/Products/Release/AlfredWebView.app' ./

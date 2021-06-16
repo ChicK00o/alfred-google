@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		D01646B9255AF27A00646F0C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
-		D03EA8CF25551E0400D3656E /* AlfredGoogleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlfredGoogleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03EA8CF25551E0400D3656E /* AlfredWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlfredWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03EA8D225551E0400D3656E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D03EA8D625551E0700D3656E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D03EA8DB25551E0700D3656E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		D03EA8C625551E0400D3656E = {
 			isa = PBXGroup;
 			children = (
-				D03EA8D125551E0400D3656E /* AlfredGoogleViewer */,
+				D03EA8D125551E0400D3656E /* AlfredWebView */,
 				D03EA8D025551E0400D3656E /* Products */,
 				D03EA8EE2555664C00D3656E /* Frameworks */,
 			);
@@ -62,12 +62,12 @@
 		D03EA8D025551E0400D3656E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D03EA8CF25551E0400D3656E /* AlfredGoogleViewer.app */,
+				D03EA8CF25551E0400D3656E /* AlfredWebView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D03EA8D125551E0400D3656E /* AlfredGoogleViewer */ = {
+		D03EA8D125551E0400D3656E /* AlfredWebView */ = {
 			isa = PBXGroup;
 			children = (
 				D04F70D225586069008E17A4 /* scripts */,
@@ -78,7 +78,7 @@
 				D04F70D4255893B3008E17A4 /* NSColorExtension.swift */,
 				D01646B9255AF27A00646F0C /* utils.swift */,
 			);
-			path = AlfredGoogleViewer;
+			path = AlfredWebView;
 			sourceTree = "<group>";
 		};
 		D03EA8EE2555664C00D3656E /* Frameworks */ = {
@@ -91,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D03EA8CE25551E0400D3656E /* AlfredGoogleViewer */ = {
+		D03EA8CE25551E0400D3656E /* AlfredWebView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D03EA8DF25551E0700D3656E /* Build configuration list for PBXNativeTarget "AlfredGoogleViewer" */;
+			buildConfigurationList = D03EA8DF25551E0700D3656E /* Build configuration list for PBXNativeTarget "AlfredWebView" */;
 			buildPhases = (
 				D03EA8CB25551E0400D3656E /* Sources */,
 				D03EA8CC25551E0400D3656E /* Frameworks */,
@@ -104,11 +104,11 @@
 			);
 			dependencies = (
 			);
-			name = AlfredGoogleViewer;
+			name = AlfredWebView;
 			packageProductDependencies = (
 			);
 			productName = AlfredGoogleViewer;
-			productReference = D03EA8CF25551E0400D3656E /* AlfredGoogleViewer.app */;
+			productReference = D03EA8CF25551E0400D3656E /* AlfredWebView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D03EA8CA25551E0400D3656E /* Build configuration list for PBXProject "AlfredGoogleViewer" */;
+			buildConfigurationList = D03EA8CA25551E0400D3656E /* Build configuration list for PBXProject "AlfredWebView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -141,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D03EA8CE25551E0400D3656E /* AlfredGoogleViewer */,
+				D03EA8CE25551E0400D3656E /* AlfredWebView */,
 			);
 		};
 /* End PBXProject section */
@@ -293,7 +293,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/frameworks/**";
-				INFOPLIST_FILE = AlfredGoogleViewer/Info.plist;
+				INFOPLIST_FILE = AlfredWebView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -301,7 +301,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 0.0.1;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
-				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredGoogleViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -314,7 +314,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/frameworks/**";
-				INFOPLIST_FILE = AlfredGoogleViewer/Info.plist;
+				INFOPLIST_FILE = AlfredWebView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -323,7 +323,7 @@
 				MARKETING_VERSION = 0.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
-				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredGoogleViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -332,7 +332,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D03EA8CA25551E0400D3656E /* Build configuration list for PBXProject "AlfredGoogleViewer" */ = {
+		D03EA8CA25551E0400D3656E /* Build configuration list for PBXProject "AlfredWebView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D03EA8DD25551E0700D3656E /* Debug */,
@@ -341,7 +341,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D03EA8DF25551E0700D3656E /* Build configuration list for PBXNativeTarget "AlfredGoogleViewer" */ = {
+		D03EA8DF25551E0700D3656E /* Build configuration list for PBXNativeTarget "AlfredWebView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D03EA8E025551E0700D3656E /* Debug */,

@@ -83,22 +83,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       "Mobile Safari/537.36"
     ].joined(separator: " ")
 
-    let startUrl = URL(string: "https://www.google.com/search?cs=1&q=start")!
-    webview.load(URLRequest(url: startUrl))
+//    let startUrl = URL(string: "https://www.google.com/search?cs=1&q=start")!
+//    webview.load(URLRequest(url: startUrl))
 
     return webview
   }()
 
-  func searchGoogle(_ query: String) {
-    self.webview.evaluateJavaScript(
-      """
-      document.querySelector("input[name='q']").value = "\(query)";
-      document.querySelector('form').submit();
-      """,
-      completionHandler: { (out, err) in
-        log("\(out)")
-        log("\(err)")
-      })
+  func renderPage(_ query: String) {
+    URLCache.shared.removeAllCachedResponses()
+    self.webview.load(URLRequest(url: URL(string: query)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData))
+    self.webview.evaluateJavaScript("window.location.reload(true)", completionHandler: nil)
     showWindow(alfred: alfredFrame)
   }
 
@@ -137,7 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           hex: param["bkgColor"]!,
           alpha: 1
         )
-        searchGoogle(param["rawQuery"]!)
+        renderPage(param["rawQuery"]!)
       default:
         break
       }

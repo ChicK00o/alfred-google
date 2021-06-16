@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>mr.pennyworth.AlfredGoogle</string>
+	<string>mr.pennyworth.WebView</string>
 	<key>category</key>
-	<string>Internet</string>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>90C0D5CD-57C4-4CD2-9483-780F71817CBC</key>
+		<key>5E20AA0F-F168-4C43-9CDF-93A8196DB00C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>6C8DB6AA-9A9A-480C-8B16-ECE5089F847F</string>
+				<string>90C0D5CD-57C4-4CD2-9483-780F71817CBD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,11 +21,37 @@
 				<false/>
 			</dict>
 		</array>
-		<key>AC02AC6E-7D9C-4AC1-9BC3-9AADDF71695F</key>
+		<key>90C0D5CD-57C4-4CD2-9483-780F71817CBD</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>782A4776-904D-42AD-B399-B5CCA4FFA9C1</string>
+				<string>D1201A73-CA4C-4564-910A-7FC65F9E1989</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AC02AC6E-7D9C-4AC1-9BC3-9AADDF71695G</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>782A4776-904D-42AD-B399-B5CCA4FFA9C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AD5AD3EA-8CF0-40F6-B7BE-949819934252</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5E20AA0F-F168-4C43-9CDF-93A8196DB00C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -38,29 +64,93 @@
 	<key>createdby</key>
 	<string>Mr. Pennyworth</string>
 	<key>description</key>
-	<string>Search Google Right in Alfred</string>
+	<string>Web View Right in Alfred</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Google Search</string>
+	<string>Web View</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-				<key>utf8</key>
-				<true/>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.setup-web-view</string>
+				<key>subtext</key>
+				<string>.setup-web-view</string>
+				<key>text</key>
+				<string>Setup Web View</string>
+				<key>withspace</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>6C8DB6AA-9A9A-480C-8B16-ECE5089F847F</string>
+			<string>AC02AC6E-7D9C-4AC1-9BC3-9AADDF71695G</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+defaults write com.runningwithcrayons.Alfred experimental.presssecretary -bool YES
+xattr -d com.apple.quarantine AlfredWebView.app
+open AlfredWebView.app
+
+killall Alfred
+open "/Applications/Alfred 4.app"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>782A4776-904D-42AD-B399-B5CCA4FFA9C2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>showWebView</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>AD5AD3EA-8CF0-40F6-B7BE-949819934252</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>{var:id}</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>{var:wid}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D1201A73-CA4C-4564-910A-7FC65F9E1989</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -79,8 +169,6 @@
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>keyword</key>
-				<string>.g</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -96,15 +184,14 @@
   python2 -c "import urllib; import sys; sys.stdout.write(urllib.quote(sys.argv[-1]))" "$1"
 }
 
-quoted=$(urlquote "$1")
-url="https://www.google.com/search?q=${quoted}"
+url=$1
 
-cat &lt;&lt; EOF | 'AlfredGoogleViewer.app/Contents/Resources/scripts/alfred-google-viewer'
+cat &lt;&lt; EOF | 'AlfredWebView.app/Contents/Resources/scripts/alfred-web-view'
 {"items" : [
-  {"title": "Open in Browser",
-   "rawQuery": "$1",
-   "arg": "$url",
-   "subtitle": "url: $url"}
+  {"title": "Go Back To Original Trigger",
+   "rawQuery": "$url",
+   "arg": "",
+   "subtitle": ""}
 ]}
 EOF</string>
 				<key>scriptargtype</key>
@@ -114,7 +201,7 @@ EOF</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search Google for '{query}'</string>
+				<string>Showing</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -123,97 +210,77 @@ EOF</string>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>90C0D5CD-57C4-4CD2-9483-780F71817CBC</string>
+			<string>90C0D5CD-57C4-4CD2-9483-780F71817CBD</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>argument</key>
+				<string>{var:query}</string>
+				<key>passthroughargument</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>#!/bin/bash
-
-defaults write com.runningwithcrayons.Alfred experimental.presssecretary -bool YES
-xattr -d com.apple.quarantine AlfredGoogleViewer.app
-open AlfredGoogleViewer.app
-
-killall Alfred
-open "/Applications/Alfred 4.app"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>variables</key>
+				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>782A4776-904D-42AD-B399-B5CCA4FFA9C1</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>.setup-google</string>
-				<key>subtext</key>
-				<string>.setup-google</string>
-				<key>text</key>
-				<string>Setup Google Search</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>AC02AC6E-7D9C-4AC1-9BC3-9AADDF71695F</string>
+			<string>5E20AA0F-F168-4C43-9CDF-93A8196DB00C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>TODO</string>
 	<key>uidata</key>
 	<dict>
-		<key>6C8DB6AA-9A9A-480C-8B16-ECE5089F847F</key>
+		<key>5E20AA0F-F168-4C43-9CDF-93A8196DB00C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>185</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>270</integer>
 		</dict>
-		<key>782A4776-904D-42AD-B399-B5CCA4FFA9C1</key>
+		<key>782A4776-904D-42AD-B399-B5CCA4FFA9C2</key>
 		<dict>
 			<key>note</key>
 			<string>- enable press secretary
 - de-quarantine
 - start app</string>
 			<key>xpos</key>
-			<integer>185</integer>
+			<integer>315</integer>
 			<key>ypos</key>
-			<integer>135</integer>
+			<integer>60</integer>
 		</dict>
-		<key>90C0D5CD-57C4-4CD2-9483-780F71817CBC</key>
+		<key>90C0D5CD-57C4-4CD2-9483-780F71817CBD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>240</integer>
 		</dict>
-		<key>AC02AC6E-7D9C-4AC1-9BC3-9AADDF71695F</key>
+		<key>AC02AC6E-7D9C-4AC1-9BC3-9AADDF71695G</key>
 		<dict>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>140</integer>
 			<key>ypos</key>
-			<integer>135</integer>
+			<integer>60</integer>
+		</dict>
+		<key>AD5AD3EA-8CF0-40F6-B7BE-949819934252</key>
+		<dict>
+			<key>xpos</key>
+			<integer>105</integer>
+			<key>ypos</key>
+			<integer>240</integer>
+		</dict>
+		<key>D1201A73-CA4C-4564-910A-7FC65F9E1989</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>240</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>
@@ -221,6 +288,6 @@ open "/Applications/Alfred 4.app"</string>
 	<key>version</key>
 	<string>0.0.1</string>
 	<key>webaddress</key>
-	<string>https://github.com/mr-pennyworth/alfred-google</string>
+	<string>https://github.com/ChicK00o/alfred-google</string>
 </dict>
 </plist>
